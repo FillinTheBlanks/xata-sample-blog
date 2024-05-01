@@ -34,3 +34,5 @@ Import data to the database by running this command:
 
 xata import csv seed/blog-posts.csv --table Posts --create
 
+Fetching data schema from the xata database:
+xata pull main
