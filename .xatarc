@@ -1,0 +1,7 @@
+{
+  "databaseURL": "https://FillinTheBlanks-s-workspace-ifki3b.ap-southeast-2.xata.sh/db/erpcoredb",
+  "codegen": {
+    "output": "src/xata.ts",
+    "moduleType": "deno"
+  }
+}
