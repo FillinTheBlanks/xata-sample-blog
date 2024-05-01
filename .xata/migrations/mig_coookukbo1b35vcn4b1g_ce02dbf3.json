@@ -1,0 +1,11 @@
+{
+  "id": "mig_coookukbo1b35vcn4b1g",
+  "checksum": "1:ce02dbf3602bec263cb9991b2099f7c1f0d62c6e27d973541b48091e5155bd03",
+  "operations": [
+    {
+      "addTable": {
+        "table": "MainAccount"
+      }
+    }
+  ]
+}

@@ -2,35 +2,35 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+To integrate Xata on the Project:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install the Xata CLI:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Shell
+PowerShell
+npm install -g @xata.io/cli
 
-## Learn More
+Once installed, authenticate the Xata CLI with your Xata account. If you don't already have an account, you can use the same workflow to sign up for a new account. Run the following command to begin the authentication workflow:
 
-To learn more about Next.js, take a look at the following resources:
+xata auth login
+Once completed, the command will create a new API key for your user account, which you should see in the "Account Settings" page in the Xata UI. That key will also be stored locally on your computer (the location might vary for depending on your operating system). It looks like this:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# .config/xata/credentials
+[default]
+apiKey=YOUR_API_KEY_HERE
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Create a new database
+Once you have the Xata CLI installed, are logged in, and have set up a new Next JS application, you are ready to use the Xata CLI to generate a new database. Accept all the prompt defaults for the following command except for the region selection, where you should choose the region closest to your application users:
 
-## Deploy on Vercel
+xata init
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Define the database schema and import CSV data
+You can use the Xata UI to manually define your schema and add data. However, for this guide, you'll use the Xata CLI and a CSV file to:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Auto-generate a schema based on column headings for names and data types inferred from the column values
+Import data to the database by running this command:
+
+xata import csv seed/blog-posts.csv --table Posts --create
+
